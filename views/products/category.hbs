@@ -1,0 +1,12 @@
+<div class="container pt-3">
+  <section>
+    <div class="m-5 mb-3 pb-4 border-bottom border-top">
+      <span><h3 class="m-4 ms-6" style="letter-spacing: 2px;">ALL CATEGORY</h3></span>
+      <div class="row ps-3">
+        {{#each categories}}
+          <ul><a href="/products/category/{{this}}">{{this}}</a></ul>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+</div>

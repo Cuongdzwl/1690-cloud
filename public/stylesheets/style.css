@@ -7,4 +7,13 @@ a {
 
 .price {
   color: #f04e45;
+  font-size: smaller;
+}
+.description{
+  font-size: smaller;
+}
+.product-img{
+  object-fit: cover;
+  height: 256px;
+  width: 100%;
 }
