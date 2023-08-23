@@ -11,7 +11,7 @@ router.get("/", async function (req, res, next) {
 router.post("/search", async function (req, res, next) {
   var key = req.body.key;
   var products = await Product.find({ name: new RegExp(key, "i") });
-  res.render("products/search", { products: products, title: "Search: " + key});
+  res.render("products/search", { products: products,key : key, title: "Search: " + key});
 });
 
 router.get("/category", async function (req, res, next) {
