@@ -28,10 +28,11 @@ router.get("/detail/:id", async function (req, res, next) {
   var id = req.params.id;
   try {
     var products = await Product.findById(id);
+    var name = products.name;
   } catch (e) {
     res.redirect("/products");
   }
-  res.render("products/detail", { product: products ,title : products.name});
+  res.render("products/detail", { product: products ,title : name});
 });
 
 router.get("/editor", async function (req, res, next) {

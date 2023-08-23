@@ -1,7 +1,10 @@
-<html>
+<html lang="en">
   <head>
     <title>{{title}}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
+
     <link
       href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
       rel="stylesheet"
@@ -83,8 +86,12 @@
                 </a>
 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <li><a class="dropdown-item" href="/products/category">All Category</a></li>
-                  <li><a class="dropdown-item" href="/products/category/Best%20Seller">Best Seller</a></li>
+                  <li><a class="dropdown-item" href="/products/category">All
+                      Category</a></li>
+                  <li><a
+                      class="dropdown-item"
+                      href="/products/category/Best%20Seller"
+                    >Best Seller</a></li>
                 </ul>
               </div>
             </li>
@@ -131,7 +138,10 @@
     <!-- Navbar -->
     {{{body}}}
     <!-- Footer -->
-    <footer class="text-center text-lg-start bg-white text-muted" style="margin-top: 18rem;">
+    <footer
+      class="text-center text-lg-start bg-white text-muted"
+      style="margin-top: 18rem;"
+    >
       <!-- Section: Social media -->
       <section
         class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
@@ -166,44 +176,56 @@
         <!-- Right -->
       </section>
       <!-- Section: Social media -->
-       <div class="container p-4 pb-0">
-    <!-- Section: Form -->
-    <section class="">
-      <form action="/users/sub" method="post" class="mt-4">
-        <!--Grid row-->
-        <div class="row d-flex justify-content-center">
-          <!--Grid column-->
-          <div class="col-auto">
-            <p class="pt-2">
-              <strong>Sign up for our newsletter</strong>
-            </p>
+      <div class="container p-4 pb-0">
+        <!-- Section: Form -->
+        <section class="">
+          <div class="container text-center mt-5">
+            <h1 class="display-3">Join Our Newsletter</h1>
+            <p class="lead">Be part of our community with
+              <span class="display-1 text-primary">{{number}}+</span>
+              subscribers.</p>
+            <p>Stay updated with the latest news, offers, and more!</p>
           </div>
-          <!--Grid column-->
+          <form action="/users/sub" method="post" class="mt-4">
+            <!--Grid row-->
+            <div class="row d-flex justify-content-center">
+              <!--Grid column-->
+              <div class="col-auto">
+                <p class="pt-2">
+                  <strong>Sign up for our newsletter</strong>
+                </p>
+              </div>
+              <!--Grid column-->
 
-          <!--Grid column-->
-          <div class="col-md-5 col-12">
-            <!-- Email input -->
-            <div class="form mb-4">
-              <input type="email" name="email" class="form-control" placeholder="Email Address..." />
+              <!--Grid column-->
+              <div class="col-md-5 col-12">
+                <!-- Email input -->
+                <div class="form mb-4">
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    placeholder="Email Address..."
+                  />
+                </div>
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-auto">
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary mb-4">
+                  Subscribe
+                </button>
+              </div>
+              <!--Grid column-->
             </div>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-auto">
-            <!-- Submit button -->
-            <button type="submit" class="btn btn-primary mb-4">
-              Subscribe
-            </button>
-          </div>
-          <!--Grid column-->
-        </div>
-        <!--Grid row-->
-      </form>
-    </section>
-    <!-- Section: Form -->
-  </div>
-  <!-- Grid container -->
+            <!--Grid row-->
+          </form>
+        </section>
+        <!-- Section: Form -->
+      </div>
+      <!-- Grid container -->
       <!-- Section: Links  -->
       <section class="">
         <div class="container text-center text-md-start mt-5">

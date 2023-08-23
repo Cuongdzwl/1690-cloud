@@ -3,7 +3,7 @@
 <div class="container col-md-10 text-center mt-5 pt-3 mb-3">
   <div class="row">
     {{! LEFT COLUMN }}
-    <div class="col shadow-2">
+    <div class="col shadow-2 hover-zoom mb-3">
       <img
         class="image-fluid"
         src="{{product.image}}"
@@ -14,17 +14,17 @@
     </div>
 
     {{! RIGHT COLUMN }}
-    <div class="col">
-      <table class="ms-4">
+    <div class="col ">
+      <table class="ms-4" style="width: 640px;">
         <tr><th class="pb-0"><a
               class="text-muted fs-6 text-truncate"
               href="/products/category/{{product.category}}"
               style="max-width: 10px;"
             >{{product.category}}</a></th></tr>
         <tr>
-          <th class="pb-4 pt-0 mt-0"><span
-              class="fs-2 text-wrap"
-            >{{product.name}}</span></th>
+          <th class="pb-4 pt-0 mt-0"><p
+              class="fs-2 text-break" style="max-width: 56rem;"
+            >{{product.name}}</p></th>
         </tr>
         <tr>
           <th><span class="fs-6 price">$ {{product.price}}</span></th>
@@ -32,15 +32,15 @@
         <tr>
           <td class="pt-3">
             <div class="row">
-              <div class="col-2">
+              <div class="col-xxl-2 col-xl-8 col-md-8 col-sm-4 me-sm-3">
                 <button type="button" class="btn btn-warning"><i
                     class="fa fa-shopping-cart"
                     aria-hidden="true"
                   ></i>
                   Buy</button>
               </div>
-              <div class="col-2">
-                <p class="text-muted text-center mt-2">Only
+              <div class="col-xxl-6 col-xl-6 col-md-7 col-sm-7">
+                <p class="text-muted text-start mt-2">Only
                   <b class="price">{{product.quantity}}</b>
                   left!</p>
               </div>

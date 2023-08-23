@@ -1,17 +1,7 @@
 <div class="container">
-    <div class="row pt-5">
-        <form class="mt-3" action="/products/editor/find/" method="post">
-            <div class="input-group">
-                <div class="form-outline border-bottom">
-                    <input type="search" name="key" class="form-control" />
-                    <label class="form-label" >Search</label>
-                </div>
-                <button type="submit" class="btn btn-primary">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-        </form>
-        <div class="col-4">
+    <div class="row pt-5 ">
+
+        <div class="col-xxl-4 col-xl-3 col-sm-12">
             <form class="p-4 border rounded" method="post" action="/products/add">
                 <h3 class="fs-4 text-center mb-3">Add Product</h3>
                 <div class="form-outline border-bottom mb-4">
@@ -19,7 +9,8 @@
                     <label class="form-label" for="Name">Name</label>
                 </div>
                 <div class="form-outline border-bottom mb-4">
-                    <input type="number" id="Price" name="price" class="form-control form-control-sm" min="0" step="0.01" />
+                    <input type="number" id="Price" name="price" class="form-control form-control-sm" min="0"
+                        step="0.01" />
                     <label class="form-label" for="Price">Price</label>
                 </div>
                 <div class="form-outline border-bottom mb-4">
@@ -31,11 +22,13 @@
                     <label class="form-label" for="Quantity">Quantity</label>
                 </div>
                 <div class="form-outline mb-4 border-bottom rounded">
-                    <textarea class="form-control form-control-sm" style="font-size: small;" name="description" rows="4"></textarea>
+                    <textarea class="form-control form-control-sm" style="font-size: small;" name="description"
+                        rows="4"></textarea>
                     <label class="form-label" for="description">Additional information</label>
                 </div>
                 <div class="form-outline mb-4 border-bottom rounded">
-                    <input type="text" class="form-control form-control-sm" style="font-size: small;" name="image" id="image" ></input>
+                    <input type="text" class="form-control form-control-sm" style="font-size: small;" name="image"
+                        id="image"></input>
                     <label class="form-label" for="image">Image URL</label>
                 </div>
                 <!-- <div class="mb-4 border-bottom rounded">
@@ -47,8 +40,19 @@
                 <button type="submit" class="btn btn-success btn-block mb-4">Add</button>
             </form>
         </div>
-        <div class="col-8">
-            <table class="table table-resposive align-middle mb-0 bg-white">
+        <div class="col-xxl-8 col-xl-9 col-sm-12">
+            <form class="mt-3" action="/products/editor/find/" method="post">
+                <div class="input-group">
+                    <div class="form-outline border-bottom">
+                        <input type="search" name="key" class="form-control" />
+                        <label class="form-label">Search</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
+            <table class="table table-responsive align-middle mb-0 bg-white">
                 <thead class="bg-light">
                     <tr>
                         <th>Name</th>
@@ -59,18 +63,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                        {{#each products }}
+                    {{#each products }}
                     <tr>
                         <td>
                             <div class="d-flex align-items-center">
                                 <a href="/products/detail/{{_id}}">
-                                    <img src="{{image}}" alt=""
-                                        style="width: 45px; height: 45px" class="hover-shadow hover-zoom rounded-circle" />
+                                    <img src="{{image}}" alt="" style="width: 45px; height: 45px"
+                                        class="hover-shadow hover-zoom rounded-circle" />
                                 </a>
                                 <div class="ms-3">
-                                    <p class="fw-bold mb-1">{{name}}</p>
-                                    <p class="text-muted mb-0 text-truncate" style="max-width: 180px">{{description}}
-                                        </p>
+                                    <p class="fw-bold mb-1 text-truncate" style="max-width: 240px">{{name}}</p>
+                                    <p class="text-muted mb-0 text-truncate" style="max-width: 256px">{{description}}</p>
                                 </div>
                             </div>
                         </td>
@@ -90,21 +93,26 @@
                                     </button>
                                 </a>
                                 <form action="/products/delete/{{_id}}" method="post">
-                                    <button type="button" class="btn btn-link text-danger btn-sm btn-rounded" data-mdb-toggle="modal" data-mdb-target="#d{{_id}}">
+                                    <button type="button" class="btn btn-link text-danger btn-sm btn-rounded"
+                                        data-mdb-toggle="modal" data-mdb-target="#d{{_id}}">
                                         <i class="fa fa-trash" aria-hidden="true"></i>
                                     </button>
-                                    
+
                                     <!-- Confirm modal -->
-                                    <div class="modal fade" id="d{{_id}}" tabindex="-1" aria-labelledby="confirmBoxLabel" aria-hidden="true">
+                                    <div class="modal fade" id="d{{_id}}" tabindex="-1"
+                                        aria-labelledby="confirmBoxLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title text-danger" id="confirmBoxLabel">Warning</h5>
-                                                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                                                    <h5 class="modal-title text-danger" id="confirmBoxLabel">Warning
+                                                    </h5>
+                                                    <button type="button" class="btn-close" data-mdb-dismiss="modal"
+                                                        aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">This process can not be undone!</div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-mdb-dismiss="modal">Close</button>
                                                     <button type="submit" class="btn btn-danger">Confirm</button>
                                                 </div>
                                             </div>
@@ -114,7 +122,7 @@
                             </div>
                         </td>
                     </tr>
-                        {{/each }}
+                    {{/each }}
                 </tbody>
             </table>
         </div>

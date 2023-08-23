@@ -73,8 +73,8 @@
     <span><h3 class="m-4 ms-6">NEW PRODUCTS</h3></span>
     <div class="row ps-3">
       {{#each products}}
-        <div class="col-3 ps-2 pe-0">
-          <div class="card mt-2 ms-2" style="height: 26rem;">
+        <div class="col-xxl-2 col-xl-4 col-md-6 col-sm-12 ps-2 pe-0">
+          <div class="card mt-2 ms-2 hover-zoom" style="height: 22rem;">
             <div
               class="bg-image hover-overlay ripple"
               data-mdb-ripple-color="light"
@@ -91,7 +91,7 @@
               </a>
             </div>
             <div class="card-body">
-              <h5 class="card-title fs-6">{{name}}</h5>
+              <h5 class="card-title fs-6 text-truncate" style="max-width: 18rem;">{{name}}</h5>
               <p
                 class="card-text text-truncate description"
                 style="max-width: 18rem;"
@@ -101,11 +101,6 @@
                   <h6 class="price">${{price}}</h6>
                 </div>
                 <div class="col-3">
-                  <a href="#!" class="btn btn-warning"><i
-                      class="fa fa-cart-plus"
-                      aria-hidden="true"
-                    ></i>
-                    Buy Now</a>
                 </div>
               </div>
             </div>
