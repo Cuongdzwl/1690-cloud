@@ -1,5 +1,6 @@
 var express = require("express");
 const Product = require("../models/product");
+const Category = require("../models/category");
 var router = express.Router();
 
 /* GET home page. */
@@ -15,7 +16,7 @@ router.post("/search", async function (req, res, next) {
 });
 
 router.get("/category", async function (req, res, next) {
-  var categories = await Product.distinct('category');
+  var categories = await Category.find();
   res.render("products/category", { categories: categories, title: "Category" });
 });
 router.get("/category/:name", async function (req, res, next) {
@@ -37,8 +38,10 @@ router.get("/detail/:id", async function (req, res, next) {
 
 router.get("/editor", async function (req, res, next) {
   var products = await Product.find();
+  var caategories = await Category.find();
   res.render("products/editor/index", {
     products: products,
+    options : caategories,
     title: "Editor",
   });
 });
@@ -75,5 +78,6 @@ router.post("/add", async function (req, res, next) {
   await Product.create(product);
   res.redirect("/products/editor/");
 });
+
 
 module.exports = router;

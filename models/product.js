@@ -4,10 +4,6 @@ var schema = mongoose.Schema({
   "name": {
     type: String,
     required: true,
-    validate: {
-      validator: (value) => /^[a-zA-Z0-9_]+$/.test(value),
-      message: "Username can only contain letters, numbers, and underscores.",
-    },
   },
   "price": {
     type: Number,
